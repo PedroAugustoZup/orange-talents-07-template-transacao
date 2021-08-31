@@ -1,5 +1,7 @@
 package br.com.zupacademy.transacoes.model;
 
+import br.com.zupacademy.transacoes.dto.response.EstabelecimentoResponse;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -43,5 +45,9 @@ public class Estabelecimento {
 
     public Long getId() {
         return id;
+    }
+
+    public EstabelecimentoResponse toResponse() {
+        return new EstabelecimentoResponse(this.nome, this.cidade, this.endereco);
     }
 }

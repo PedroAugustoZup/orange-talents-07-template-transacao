@@ -1,6 +1,7 @@
 package br.com.zupacademy.transacoes.model;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.Email;
@@ -17,7 +18,7 @@ public class Cartao {
     @Email
     private String email;
 
-    @OneToMany(mappedBy = "cartao")
+    @OneToMany(mappedBy = "cartao", fetch = FetchType.LAZY)
     private List<Transacao> transacoes = new ArrayList<>();
 
     @Deprecated

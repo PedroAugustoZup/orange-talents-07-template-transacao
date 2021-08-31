@@ -21,6 +21,10 @@ public class Transacao {
     @NotNull
     private LocalDateTime efetivadaEm;
 
+    @Deprecated
+    public Transacao() {
+    }
+
     public Transacao(String id, BigDecimal valor, Estabelecimento estabelecimento, Cartao cartao, LocalDateTime efetivadaEm) {
         this.id = id;
         this.valor = valor;
